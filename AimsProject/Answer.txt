@@ -1,0 +1,11 @@
+● After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+---> Bởi vì o1 và o2 là các bản sao của tham chiếu jungleDVD và cinderellaDVD. Sau khi thực thi hàm, giá trị của o1 và o2 thay đổi, nhưng các tham chiếu gốc jungleDVD và cinderellaDVD không bị ảnh hưởng.
+
+● After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+---> Trong trường hợp này, biến dvd là bản sao của tham chiếu trỏ tới cùng một đối tượng trong bộ nhớ như jungleDVD. Vì phương thức thay đổi thuộc tính của đối tượng, điều này dẫn đến sự thay đổi thực tế của đối tượng.
+
+Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+---> Vì đây là phương thức ghi đè, kiểu trả về của toString() phải là String và phạm vi truy cập phải là public để có thể sử dụng bên ngoài lớp.
+
+Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+---> Cả hai phương pháp đều có ưu điểm tùy thuộc vào tình huống cụ thể. Việc sử dụng varargs mang lại tính linh hoạt, trong khi sử dụng mảng có thể giúp quản lý dữ liệu dễ dàng hơn. Sự lựa chọn phụ thuộc vào yêu cầu của chương trình.

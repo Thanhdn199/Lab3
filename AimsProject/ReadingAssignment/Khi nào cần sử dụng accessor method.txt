@@ -1,0 +1,6 @@
+Khi nào cần sử dụng accessor method?
+
+Khi trao đổi dữ liệu theo interface.
+Khi muốn che giấu dữ liệu và duy trì tính đồng bộ.
+Khi cần thêm các logic xác thực, kiểm tra.
+Tránh lạm dụng để giữ cho mã dễ bảo trì và tránh lộ thông tin khỏi thiết kế lớp.

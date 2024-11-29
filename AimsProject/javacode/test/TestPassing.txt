@@ -1,0 +1,30 @@
+package test.disc;
+import aims.disc.DigitalVideoDisc;
+
+public class TestPassingParameter {
+    public static void main(String[] args) {
+        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
+        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+        
+        // Test swapping titles (corrected)
+        swap2(jungleDVD, cinderellaDVD);
+        System.out.println("jungle dvd title: " + jungleDVD.getTitle());  // Expected: Cinderella
+        System.out.println("cinderella dvd title: " + cinderellaDVD.getTitle());  // Expected: Jungle
+        
+        // Test changing title (corrected)
+        changeTitle(jungleDVD, cinderellaDVD.getTitle());
+        System.out.println("jungle dvd title: " + jungleDVD.getTitle());  // Expected: Cinderella
+    }
+
+    // Corrected swap to actually swap titles of the DVDs
+    public static void swap2(DigitalVideoDisc dis1, DigitalVideoDisc dis2) {
+        String tmp = dis1.getTitle();
+        dis1.setTitle(dis2.getTitle());
+        dis2.setTitle(tmp);
+    }
+
+    // Fixed changeTitle to actually change the title of the DVD
+    public static void changeTitle(DigitalVideoDisc dvd, String title) {
+        dvd.setTitle(title);  // Directly modify the title of the passed DVD
+    }
+}

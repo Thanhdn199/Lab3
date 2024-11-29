@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Task226 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		// Giải phương trình bậc nhất (ax + b = 0)
+		System.out.println("Nhap a va b cho phuong trinh bac nhat (ax + b = 0): ");
+		double a1 = scanner.nextDouble();
+		double b1 = scanner.nextDouble();
+
+		if (a1 == 0) {
+			System.out.println(b1 == 0 ? "Phuong trinh vo so nghiem!" : "Phuong trinh vo nghiem!");
+		} else {
+			System.out.println("Nghiem cua phuong trinh la: x = " + (-b1 / a1));
+		}
+
+		// Giải phương trình bậc hai (ax^2 + bx + c = 0)
+		System.out.println("Nhap a, b va c cho phuong trinh bac hai (ax^2 + bx + c = 0): ");
+		double a2 = scanner.nextDouble();
+		double b2 = scanner.nextDouble();
+		double c2 = scanner.nextDouble();
+
+		if (a2 == 0) {
+			// Trở về phương trình bậc nhất
+			if (b2 == 0) {
+				System.out.println(c2 == 0 ? "Phuong trinh vo so nghiem!" : "Phuong trinh vo nghiem!");
+			} else {
+				System.out.println("Phuong trinh co nghiem duy nhat: x = " + (-c2 / b2));
+			}
+		} else {
+			// Tính delta và giải phương trình bậc hai
+			double delta = b2 * b2 - 4 * a2 * c2;
+			if (delta < 0) {
+				System.out.println("Phuong trinh vo nghiem!");
+			} else if (delta == 0) {
+				double x = -b2 / (2 * a2);
+				System.out.println("Phuong trinh co nghiem kep: x = " + x);
+			} else {
+				double x1 = (-b2 + Math.sqrt(delta)) / (2 * a2);
+				double x2 = (-b2 - Math.sqrt(delta)) / (2 * a2);
+				System.out.println("Phuong trinh co hai nghiem phan biet: x1 = " + x1 + ", x2 = " + x2);
+			}
+		}
+
+		scanner.close();
+	}
+}

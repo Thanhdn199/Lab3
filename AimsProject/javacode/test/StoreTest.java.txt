@@ -1,0 +1,31 @@
+package test.cart;
+
+import aims.disc.DigitalVideoDisc;
+import aims.store.Store;
+
+public class StoreTest {
+    public static void main(String[] args) {
+        // Create a new Store instance
+        Store store = new Store();
+
+        // Create DigitalVideoDisc objects and add them to the store
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+        store.addDVD(dvd1);
+
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+        store.addDVD(dvd2);
+
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", 18.99f);
+        store.addDVD(dvd3);
+
+        // Now, try removing DVDs
+        System.out.println("\nRemoving DVDs:");
+        store.removeDVD(dvd2);  // Should successfully remove DVD
+        store.removeDVD(dvd1);  // Should successfully remove DVD
+        store.removeDVD(dvd3);  // Should successfully remove DVD
+
+        // Try removing a DVD that doesn't exist in the store
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Frozen", "Animation", "Chris Buck", 102, 19.99f);
+        store.removeDVD(dvd4);  // Should fail as this DVD was never added
+    }
+}
